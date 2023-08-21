@@ -1,5 +1,6 @@
 import Head from "next/head"; // for titles, descriptions, meta tags
 import { Inter } from "next/font/google";
+import ArticleList from "@/components/ArticleList";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,9 +14,8 @@ export default function Home({ articles }) {
         <title>WebDEv News</title>
         <meta name="keywords" content="web dev, programming, coding" />
       </Head>
-      {articles.map((article) => (
-        <h1 key={article.id}>{article.title}</h1>
-      ))}
+
+      <ArticleList articles={articles} />
     </div>
   );
 }

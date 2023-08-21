@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+// this is rendered on the server so we cant have onClicks
 
 export default function Document() {
   return (
