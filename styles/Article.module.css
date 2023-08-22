@@ -1,6 +1,32 @@
-.grid{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 20px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding-top: 20px;
+  gap: 20px;
+}
+.card {
+  display: block;
+  text-decoration: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h3{
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+} 
+
+.card p{
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
 }
