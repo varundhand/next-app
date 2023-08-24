@@ -1,5 +1,5 @@
 import { server } from "@/config";
-import Head from "next/head"; // for titles, descriptions, meta tags
+// import Head from "next/head"; // for titles, descriptions, meta tags //* I used Custom Meta component instead
 import { Inter } from "next/font/google";
 import ArticleList from "@/components/ArticleList";
 
@@ -12,10 +12,10 @@ export default function Home({ articles }) {
   return (
     <div>
       {/* can add custom head tags */}
-      <Head>
+      {/* <Head>
         <title>WebDEv News</title>
         <meta name="keywords" content="web dev, programming, coding" />
-      </Head>
+      </Head> */}
 
       <ArticleList articles={articles} />
     </div>
