@@ -1,3 +1,4 @@
+import { server } from "@/config";
 import Head from "next/head"; // for titles, descriptions, meta tags
 import { Inter } from "next/font/google";
 import ArticleList from "@/components/ArticleList";
@@ -20,11 +21,9 @@ export default function Home({ articles }) {
   );
 }
 
-//fetching data using getStaticProps (fetches in build time)
 export const getStaticProps = async () => {
-  const resp = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?_limit=6`
-  );
+  const resp = await fetch(`${server}/api/articles`); // server allows us to switch between local development and production env seemlessly
+  console.log(resp);
   const articles = await resp.json();
 
   return {
@@ -33,3 +32,17 @@ export const getStaticProps = async () => {
     },
   };
 };
+
+//fetching data using getStaticProps (fetches in build time)
+// export const getStaticProps = async () => {
+//   const resp = await fetch(
+//     `https://jsonplaceholder.typicode.com/posts?_limit=6`
+//   );
+//   const articles = await resp.json();
+
+//   return {
+//     props: {
+//       articles,
+//     },
+//   };
+// };
