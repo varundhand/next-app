@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ articles }) {
   console.log(articles);
+  // console.log(server);
   // const { title, body } = articles;
   return (
     <div>
@@ -23,9 +24,8 @@ export default function Home({ articles }) {
 
 export const getStaticProps = async () => {
   const resp = await fetch(`${server}/api/articles`); // server allows us to switch between local development and production env seemlessly
-  console.log(resp);
   const articles = await resp.json();
-
+  // const articles = (await resp.GET()).json(); //* Alter
   return {
     props: {
       articles,
